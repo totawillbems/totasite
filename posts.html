@@ -3,64 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منشوراتي | طوطا</title>
+    <title>المنشورات | شبكة طوطا الاجتماعية</title>
+    <meta name="description" content="الصفحة الاجتماعية لمشاركة المشاريع والتحديثات">
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/matrix.js" as="script">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/social.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Matrix Background Canvas -->
     <canvas id="matrix"></canvas>
     
-    <header class="posts-header">
-        <a href="index.html" class="back-btn">
-            <i class="fas fa-arrow-right"></i> العودة للرئيسية
-        </a>
-        <h1>منشوراتي</h1>
-    </header>
-
-    <main class="media-container">
-        <!-- Videos Section -->
-        <section class="media-section">
-            <h2><i class="fas fa-video"></i> مقاطع الفيديو</h2>
-            <div class="media-grid" id="videos-container">
-                <!-- Will be populated by media.js -->
-            </div>
-        </section>
-
-        <!-- Images Section -->
-        <section class="media-section">
-            <h2><i class="fas fa-image"></i> الصور</h2>
-            <div class="media-grid" id="images-container">
-                <!-- Will be populated by media.js -->
-            </div>
-        </section>
-
-        <!-- Files Section -->
-        <section class="media-section">
-            <h2><i class="fas fa-file"></i> الملفات</h2>
-            <div class="media-grid" id="files-container">
-                <!-- Will be populated by media.js -->
-            </div>
-        </section>
-    </main>
-
-    <!-- Modal for media viewing -->
-    <div class="modal" id="media-modal">
-        <span class="close-btn">&times;</span>
-        <div class="modal-content">
-            <video controls class="modal-media" id="modal-video" style="display:none;"></video>
-            <img class="modal-media" id="modal-image" style="display:none;">
-            <iframe id="modal-file" style="display:none;"></iframe>
-            <div class="media-info">
-                <h3 id="media-title"></h3>
-                <p id="media-description"></p>
-                <a href="#" id="download-btn" download>
-                    <i class="fas fa-download"></i> تحميل
-                </a>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-code"></i> طوطا
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="#" class="nav-link active"><i class="fas fa-newspaper"></i> المنشورات</a>
+                <a href="#" class="nav-link"><i class="fas fa-users"></i> الشبكة</a>
+                <a href="#" class="nav-link"><i class="fas fa-envelope"></i> الرسائل</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <script src="script.js"></script>
-    <script src="media.js"></script>
+    <!-- Main Content -->
+    <main class="social-container">
+        <div class="social-grid">
+            <!-- Posts Feed -->
+            <section class="posts-feed">
+                <!-- Post Creation -->
+                <div class="post-creator card">
+                    <div class="creator-header">
+                        <img src="assets/images/profile.jpg" alt="صورة الملف الشخصي" class="creator-avatar">
+                        <input type="text" placeholder="ماذا تريد أن تنشر اليوم؟" class="post-input">
+                    </div>
+                    <div class="creator-actions">
+                        <button class="action-btn"><i class="fas fa-image"></i> صورة</button>
+                        <button class="action-btn"><i class="fas fa-video"></i> فيديو</button>
+                        <button class="action-btn"><i class="fas fa-paperclip"></i> ملف</button>
+                        <button class="publish-btn">نشر</button>
+                    </div>
+                </div>
+
+                <!-- Posts List -->
+                <div id="posts-container">
+                    <!-- Dynamically loaded posts -->
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="social-sidebar">
+                <div class="profile-card card">
+                    <img src="assets/images/profile.jpg" alt="صورة الملف الشخصي" class="profile-avatar">
+                    <h3>طوطا</h3>
+                    <p class="profile-title">مطور ويب ومصمم ألعاب</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">127</span>
+                            <span class="stat-label">المتابعون</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">84</span>
+                            <span class="stat-label">يتابع</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">36</span>
+                            <span class="stat-label">المشاريع</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trending-card card">
+                    <h4>المواضيع الشائعة</h4>
+                    <ul class="trending-list">
+                        <li><a href="#">#برمجة</a></li>
+                        <li><a href="#">#ألعاب</a></li>
+                        <li><a href="#">#تطوير_الويب</a></li>
+                        <li><a href="#">#الذكاء_الاصطناعي</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="social-footer">
+        <p>&copy; 2023 شبكة طوطا الاجتماعية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/matrix.js" defer></script>
+    <script src="js/social.js" defer></script>
 </body>
 </html>
