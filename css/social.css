@@ -1,74 +1,24 @@
-/* Social Network Styles */
-.main-nav {
-    background: rgba(0, 10, 0, 0.9);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #0f0;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-}
-
-.logo {
-    color: #0f0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-link {
-    color: #ccc;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: #0f0;
-}
-
+/* Social Page Styles */
 .social-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
+    max-width: 800px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
     position: relative;
     z-index: 10;
 }
 
-.social-grid {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 2rem;
-}
-
-.card {
+/* Post Creator */
+.post-creator {
+    margin-bottom: 30px;
     background: rgba(0, 20, 0, 0.3);
     border: 1px solid #0f0;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.post-creator {
-    margin-bottom: 2rem;
 }
 
 .creator-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.2);
 }
 
 .creator-avatar {
@@ -76,23 +26,26 @@
     height: 50px;
     border-radius: 50%;
     border: 2px solid #0f0;
-    margin-left: 1rem;
+    margin-left: 15px;
 }
 
 .post-input {
     flex: 1;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 0.75rem 1rem;
-    color: white;
-    font-size: 1rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.post-input::placeholder {
+    color: #777;
 }
 
 .creator-actions {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 10px 15px;
 }
 
 .action-btn {
@@ -100,6 +53,7 @@
     border: none;
     color: #ccc;
     cursor: pointer;
+    font-size: 16px;
     transition: all 0.3s;
 }
 
@@ -109,28 +63,42 @@
 
 .publish-btn {
     background: #0f0;
-    color: black;
+    color: #000;
     border: none;
+    padding: 8px 20px;
     border-radius: 20px;
-    padding: 0.5rem 1.5rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 .publish-btn:hover {
-    background: #0a0;
+    background: #0d0;
 }
 
-/* Posts Styles */
+/* Posts Feed */
+.posts-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .post {
-    margin-bottom: 1.5rem;
+    background: rgba(0, 20, 0, 0.3);
+    border: 1px solid #0f0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.post:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
 }
 
 .post-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
 }
 
 .post-avatar {
@@ -138,122 +106,71 @@
     height: 40px;
     border-radius: 50%;
     border: 1px solid #0f0;
-    margin-left: 1rem;
+    margin-left: 15px;
 }
 
 .post-author {
     font-weight: bold;
     color: #0f0;
+    margin-bottom: 5px;
 }
 
 .post-time {
     color: #777;
-    font-size: 0.8rem;
+    font-size: 12px;
 }
 
 .post-content {
-    margin-bottom: 1rem;
+    margin: 15px 0;
     line-height: 1.6;
 }
 
 .post-image {
-    width: 100%;
+    max-width: 100%;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    margin: 15px 0;
     border: 1px solid #333;
 }
 
 .post-actions {
     display: flex;
-    gap: 1rem;
-    border-top: 1px solid #333;
-    padding-top: 0.5rem;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 255, 0, 0.1);
 }
 
-.post-action {
+.like-btn {
+    background: transparent;
+    border: none;
     color: #ccc;
     cursor: pointer;
-    transition: all 0.3s;
-}
-
-.post-action:hover {
-    color: #0f0;
-}
-
-/* Sidebar Styles */
-.profile-card {
-    text-align: center;
-}
-
-.profile-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #0f0;
-    margin: 0 auto 1rem;
-}
-
-.profile-title {
-    color: #ccc;
-    margin-bottom: 1.5rem;
-}
-
-.profile-stats {
     display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
-
-.stat {
-    padding: 0 0.5rem;
-}
-
-.stat-number {
-    display: block;
-    font-weight: bold;
-    color: #0f0;
-    font-size: 1.2rem;
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    color: #777;
-}
-
-.trending-list {
-    list-style: none;
-    padding: 0;
-}
-
-.trending-list li {
-    margin-bottom: 0.5rem;
-}
-
-.trending-list a {
-    color: #ccc;
-    text-decoration: none;
+    align-items: center;
+    gap: 5px;
     transition: all 0.3s;
 }
 
-.trending-list a:hover {
-    color: #0f0;
+.like-btn:hover {
+    color: #f00;
 }
 
-/* Footer */
-.social-footer {
-    text-align: center;
-    padding: 2rem;
-    color: #777;
-    border-top: 1px solid #333;
+.like-btn.liked {
+    color: #f00;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    .social-grid {
-        grid-template-columns: 1fr;
+    .social-container {
+        margin-top: 70px;
+        padding: 0 15px;
     }
     
-    .nav-links {
-        gap: 1rem;
+    .post-creator {
+        margin-bottom: 20px;
+    }
+    
+    .creator-avatar {
+        width: 40px;
+        height: 40px;
     }
 }
