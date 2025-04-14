@@ -3,50 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تصاميمي | طوطا</title>
-    <link rel="stylesheet" href="style.css">
+    <title>معرض التصاميم | طوطا</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/photos.css">
 </head>
 <body>
     <canvas id="matrix"></canvas>
     
-    <div class="container">
-        <header class="portfolio-header">
-            <a href="index.html" class="back-btn">
-                <i class="fas fa-arrow-left"></i> العودة للصفحة الرئيسية
-            </a>
-            <h1>معرض التصاميم</h1>
-        </header>
-        
-        <div class="portfolio-content">
-            <div class="portfolio-description">
-                <p>هنا تجد أحدث أعمالي في مجال التصميم والجرافيك:</p>
+    <header class="gallery-header">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> العودة للرئيسية
+        </a>
+        <h1><i class="fas fa-images"></i> معرض التصاميم</h1>
+    </header>
+    
+    <main class="gallery-main">
+        <div class="gallery-controls">
+            <div class="search-box">
+                <input type="text" placeholder="ابحث في التصاميم..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
-            
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="design1.jpg" alt="تصميم 1">
-                    <h3>تصميم 1</h3>
-                    <p>وصف قصير للتصميم الأول</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="design2.jpg" alt="تصميم 2">
-                    <h3>تصميم 2</h3>
-                    <p>وصف قصير للتصميم الثاني</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="design3.jpg" alt="تصميم 3">
-                    <h3>تصميم 3</h3>
-                    <p>وصف قصير للتصميم الثالث</p>
-                </div>
-                
-                <!-- Add more designs as needed -->
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="web">تصاميم ويب</button>
+                <button class="filter-btn" data-filter="graphic">جرافيك</button>
+                <button class="filter-btn" data-filter="3d">تصاميم 3D</button>
             </div>
         </div>
-    </div>
+        
+        <div class="photo-gallery">
+            <!-- Photo Item 1 -->
+            <div class="photo-item" data-category="web" data-tags="موقع تصميم واجهة">
+                <div class="photo-thumbnail">
+                    <img src="images/gallery/thumbs/design1-thumb.jpg" alt="تصميم موقع" loading="lazy">
+                    <div class="photo-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3>تصميم موقع</h3>
+                    <p class="photo-date">15 مارس 2023</p>
+                </div>
+                <div class="photo-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <img src="images/gallery/design1.jpg" alt="تصميم موقع كامل">
+                        <div class="photo-details">
+                            <h3>تصميم موقع</h3>
+                            <p>تصميم واجهة موقع إلكتروني معاصر بألوان متدرجة</p>
+                            <div class="photo-meta">
+                                <span><i class="fas fa-tag"></i> تصميم ويب</span>
+                                <span><i class="fas fa-calendar"></i> 15/03/2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo Item 2 -->
+            <div class="photo-item" data-category="graphic" data-tags="شعار جرافيك">
+                <div class="photo-thumbnail">
+                    <img src="images/gallery/thumbs/design2-thumb.jpg" alt="تصميم شعار" loading="lazy">
+                    <div class="photo-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3>تصميم شعار</h3>
+                    <p class="photo-date">22 فبراير 2023</p>
+                </div>
+                <div class="photo-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <img src="images/gallery/design2.jpg" alt="تصميم شعار كامل">
+                        <div class="photo-details">
+                            <h3>تصميم شعار</h3>
+                            <p>شعار عصري لشركة تقنية بأسلوب بسيط</p>
+                            <div class="photo-meta">
+                                <span><i class="fas fa-tag"></i> جرافيك</span>
+                                <span><i class="fas fa-calendar"></i> 22/02/2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add more photo items as needed -->
+        </div>
+    </main>
 
-    <script src="script.js"></script>
+    <script src="js/matrix.js"></script>
+    <script src="js/photos.js"></script>
 </body>
 </html>
