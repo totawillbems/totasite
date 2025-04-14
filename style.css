@@ -227,3 +227,123 @@ h2::after {
         max-width: 300px;
     }
 }
+/* Portfolio Pages Specific Styles */
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #4a00e0, #8e2de2);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-description {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.portfolio-description p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.gallery-item {
+    background: rgba(30, 30, 30, 0.7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background: #000;
+    border-radius: 5px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.gallery-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #8e2de2;
+}
+
+.gallery-item p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Portfolio Pages */
+@media (max-width: 768px) {
+    .back-btn {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        transform: none;
+    }
+    
+    .back-btn:hover {
+        transform: none;
+    }
+    
+    .portfolio-header {
+        text-align: center;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
