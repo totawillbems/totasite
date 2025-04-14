@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Courier New', monospace; /* Terminal-like font */
 }
 
 body {
-    background-color: #0a0a0a;
-    color: #fff;
+    background-color: #000;
+    color: #0f0; /* Bright green text */
     overflow-x: hidden;
     position: relative;
 }
@@ -37,11 +37,10 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     padding: 2rem;
-    background: rgba(20, 20, 20, 0.7);
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 20, 0, 0.3); /* Dark green background */
+    border-radius: 5px;
+    border: 1px solid #0f0; /* Green border */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
 }
 
 .profile-pic {
@@ -49,27 +48,21 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #4a00e0;
+    border: 3px solid #0f0;
     margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.05);
+    filter: hue-rotate(10deg) brightness(1.1);
 }
 
 h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #008000;
-    background: linear-gradient(45deg, #8e2de2, #4a00e0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #0f0;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
 }
 
 .title {
     font-size: 1.1rem;
-    color: #aaa;
+    color: #0a0; /* Slightly darker green */
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -78,7 +71,7 @@ h1 {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
-    color: #ddd;
+    color: #0f0;
 }
 
 /* Projects Section */
@@ -90,9 +83,9 @@ h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
-    color: #8e2de2;
+    color: #0f0;
     position: relative;
-    padding-bottom: 10px;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
 }
 
 h2::after {
@@ -102,39 +95,41 @@ h2::after {
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
-    height: 3px;
-    background: linear-gradient(45deg, #8e2de2, #4a00e0);
-    border-radius: 3px;
+    height: 2px;
+    background: #0f0;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .project-card {
-    background: rgba(30, 30, 30, 0.7);
-    padding: 2rem;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 15, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid #0a0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    background: rgba(40, 40, 40, 0.8);
+    background: rgba(0, 20, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    transform: translateY(-5px);
+    border-color: #0f0;
 }
 
 .project-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #8e2de2;
+    color: #0f0;
 }
 
 .project-card p {
-    color: #ccc;
+    color: #0a0;
     line-height: 1.6;
 }
 
@@ -142,22 +137,22 @@ h2::after {
 .portfolio-section {
     text-align: center;
     padding: 3rem 2rem;
-    background: rgba(20, 20, 20, 0.7);
-    border-radius: 15px;
+    background: rgba(0, 15, 0, 0.3);
+    border-radius: 5px;
     margin-bottom: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #0a0;
 }
 
 .portfolio-section p {
     margin-bottom: 2rem;
-    color: #ddd;
+    color: #0f0;
     font-size: 1.1rem;
 }
 
 .portfolio-links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
@@ -167,28 +162,28 @@ h2::after {
     align-items: center;
     justify-content: center;
     padding: 12px 30px;
-    background: linear-gradient(45deg, #4a00e0, #8e2de2);
-    color: white;
+    background: rgba(0, 20, 0, 0.5);
+    color: #0f0 !important;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 5px;
     font-weight: bold;
     font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: none;
+    border: 1px solid #0f0;
     cursor: pointer;
     margin: 0.5rem;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
 .portfolio-link {
-    background: linear-gradient(45deg, #00b09b, #96c93d);
     padding: 15px 35px;
     font-size: 1.1rem;
 }
 
 .portfolio-btn:hover, .portfolio-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 30, 0, 0.7);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+    color: #0f0 !important;
 }
 
 .portfolio-btn:active, .portfolio-link:active {
@@ -197,6 +192,7 @@ h2::after {
 
 .portfolio-btn i, .portfolio-link i {
     margin-left: 8px;
+    color: #0f0;
 }
 
 /* Responsive Design */
